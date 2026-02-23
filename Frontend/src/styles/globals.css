@@ -21,8 +21,6 @@ body {
   color: #E6E8F0;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  padding-top: 80px;
-  /* Offset for fixed navbar */
 }
 
 /* ---- ROOT VARIABLES (DESIGN SYSTEM) ---- */
@@ -53,6 +51,10 @@ body {
 
   /* Transitions */
   --transition-smooth: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Layers */
+  --z-sticky: 1000;
+  --z-overlay: 2000;
 }
 
 /* ---- TEXT SELECTION ---- */
