@@ -16,10 +16,13 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #0A0E27; /* Deep Space Blue */
+  background-color: #0A0E27;
+  /* Deep Space Blue */
   color: #E6E8F0;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  padding-top: 80px;
+  /* Offset for fixed navbar */
 }
 
 /* ---- ROOT VARIABLES (DESIGN SYSTEM) ---- */

@@ -4,10 +4,13 @@
    ================================ */
 
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: var(--z-sticky);
-  background: rgba(10, 14, 39, 0.8);
+  background: rgba(10, 14, 39, 0.85);
+  /* Slightly more opaque */
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border-bottom: 1px solid var(--glass-border);
