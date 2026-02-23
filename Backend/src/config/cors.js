@@ -8,7 +8,7 @@ const allowedOrigins = [
   "http://localhost:5175", // Vite alternate
   "http://localhost:5176", // Vite alternate
   // Production frontend URLs
-  process.env.FRONTEND_URL, // Set this in Render environment variables
+  process.env.FRONTEND_URL?.replace(/\/$/, ""), // Set this in Render environment variables
 ].filter(Boolean)
 
 export const corsConfig = cors({
@@ -16,18 +16,22 @@ export const corsConfig = cors({
     // allow server-to-server or tools like Postman
     if (!origin) return callback(null, true)
 
+    // Clean origin for comparison (remove trailing slash)
+    const normalizedOrigin = origin.replace(/\/$/, "")
+
     // In production, allow the configured frontend URL
     // Also allow any origin ending with common deployment platforms
     if (
-      allowedOrigins.includes(origin) ||
-      origin.endsWith('.vercel.app') ||
-      origin.endsWith('.netlify.app') ||
-      origin.endsWith('.localhost') ||
-      origin.endsWith('.pages.dev')
+      allowedOrigins.includes(normalizedOrigin) ||
+      normalizedOrigin.endsWith('.vercel.app') ||
+      normalizedOrigin.endsWith('.netlify.app') ||
+      normalizedOrigin.endsWith('.onrender.com') ||
+      normalizedOrigin.endsWith('.localhost') ||
+      normalizedOrigin.endsWith('.pages.dev')
     ) {
       callback(null, true)
     } else {
-      console.log('CORS blocked origin:', origin)
+      console.log('CORS blocked origin:', normalizedOrigin)
       callback(new Error("Not allowed by CORS"))
     }
   },
