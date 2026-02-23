@@ -1,0 +1,38 @@
+{
+  "name": "skillroute-backend",
+  "version": "1.0.0",
+  "description": "SkillRoute - AI-powered college guidance backend",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node src/seeds/colleges.seed.js"
+  },
+  "keywords": [
+    "college",
+    "guidance",
+    "ai",
+    "quiz",
+    "predictor"
+  ],
+  "author": "SkillRoute Team",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.71.2",
+    "axios": "^1.6.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "groq-sdk": "^0.8.0",
+    "joi": "^17.11.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^9.1.1",
+    "openai": "^6.15.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
